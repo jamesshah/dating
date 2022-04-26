@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+// Database model for Users to store in the database
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -50,6 +52,12 @@ const UserSchema = new mongoose.Schema({
       ref: "User",
     },
   ],
+  requests: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
+  ],
   pictures: [
     {
       type: String,
@@ -69,11 +77,38 @@ const UserSchema = new mongoose.Schema({
   },
   ageGroup: {
     type: String,
-    enum: ["18-21", "22-25", "25-29", "30+"],
+    enum: ["18-21", "22-25", "26-29", "30+"],
+    default: "18-21",
   },
   preferredAgeGroup: {
     type: String,
-    enum: ["18-21", "22-25", "25-29", "30+"],
+    enum: ["18-21", "22-25", "26-29", "30+"],
+    default: "18-21",
+  },
+  q1: {
+    type: String,
+    maxlength: 150,
+    default: "",
+  },
+  q2: {
+    type: String,
+    maxlength: 150,
+    default: "",
+  },
+  q3: {
+    type: String,
+    maxlength: 150,
+    default: "",
+  },
+  q4: {
+    type: String,
+    maxlength: 150,
+    default: "",
+  },
+  q5: {
+    type: String,
+    maxlength: 150,
+    default: "",
   },
   active: {
     type: Boolean,

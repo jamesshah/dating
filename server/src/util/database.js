@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const LOGGER = require("./logger");
 
+// Function to connect to database using mongoose
 const connectToDatabase = async () => {
   await mongoose
     .connect(process.env.DB_URL)

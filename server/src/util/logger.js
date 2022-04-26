@@ -1,5 +1,4 @@
 const { configure, getLogger } = require("log4js");
-// import { configure, getLogger } from "log4js";
 
 configure({
   appenders: {
@@ -8,7 +7,7 @@ configure({
     },
     app: {
       type: "file",
-      filename: `../app.log`,
+      filename: "./logs/app.log",
       maxLogSize: 10485760,
       backups: 1,
       compress: true,
@@ -22,6 +21,7 @@ configure({
   },
 });
 
+// Configuring and returning logger instance for logging in application
 const logger = getLogger();
 logger.debug("Logger Level On : ", "info");
 module.exports = logger;

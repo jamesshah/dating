@@ -8,12 +8,16 @@ router
   .get("/", authorize, userController.getAllUsers)
   .post("/", userController.createNewUser)
   .get("/profile", authorize, userController.getUserProfile)
-  .put("/profile", userController.updateUserProfile)
+  .put("/profile", authorize, userController.updateUserProfile)
   .post("/login", userController.authUser)
   .get("/logout", userController.logoutUser)
-  .post("/like", userController.likeUser)
-  .put("/like", userController.dislikeUser)
+  .get("/likes", authorize, userController.getLikes)
+  .put("/like", authorize, userController.likeUser)
+  .put("/dislike", authorize, userController.dislikeUser)
+  .get("/matches", authorize, userController.getMatches)
+  .put("/match", authorize, userController.matchUser)
+  .put("/dismatch", authorize, userController.dismatchUser)
   .get("/:username", authorize, userController.getUserByUsername)
-  .delete("/:username", userController.deleteUser);
+  .delete("/:username", authorize, userController.deleteUser);
 
 module.exports = router;
