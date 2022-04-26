@@ -1,0 +1,16 @@
+.navbar {
+  background-color: #111213;
+}
+
+.navbar_brand {
+  font-weight: bold;
+}
+
+.navbar_nav {
+  display: none !important;
+}
+
+.container {
+  justify-content: center !important;
+  align-items: center;
+}

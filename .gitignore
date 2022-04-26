@@ -1,10 +1,12 @@
-client/node_modules
-client/build
-client/.env
-client/.env.production
+webapp/node_modules
+webapp/build
+webapp/.env
+webapp/.env.production
 
 server/.env
 server/node_modules
 
-.DS_Store
+*node_modules
+
+*.DS_Store
 
